@@ -30,7 +30,6 @@ body{
     background-color: #fff;
     box-shadow: 5px 10px 50px #19ac5688;
     transition: transform .5s;
-
 }
 
 .container:hover{

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="registration-style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+
+
+    <title>Senior Citizen Portal</title>
+</head>
+<body style="background-color: rgb(82, 82, 82);">
+    <div class="container" style="background-color: white; width: 1200px; padding: 20px;">
+        <div class="header">
+            <img src="images/binan-seal.jpg" width="116px" height="116px">
+            <p>OFFICE FOR SENIOR CITIZEN AFFAIRS</br>City of Biñan</br></br>SENIOR CITIZEN INFORMATION SHEET</br>Statistic Data Gathering Form</p>
+        </div>
+        
+        <div class="reg-form">
+            <h3> A. Identifying Information</h3>
+            <form class="pure-form pure-g">
+                <fieldset>
+                    <!-- Full Name -->
+                    <legend>1. Complete Name</legend>
+                    <input type="text" placeholder="Last Name" style="text-transform: uppercase;" required />
+                    <input type="text" placeholder="First Name" style="text-transform: uppercase;" required/>
+                    <input type="text" placeholder="Middle Name" style="text-transform: uppercase;" required/>
+                    <label style="margin-left: 25px;">
+                        <input type="checkbox" id="checkbox" /> I have an extension.
+                    </label>
+                        <select id="selectForm" style="margin-left: 5px;" disabled>
+                            <option>JR.</option>
+                            <option>SR.</option>
+                            <option>I</option>
+                            <option>II</option>
+                            <option>III</option>
+                            <option>IV</option>
+                            <option>V</option>
+                            <option>VI</option> 
+                        </select>
+
+                    <!-- Address -->
+                    <legend>2. Address</legend>
+
+                    <input type="text" class="pure-input-1-3" placeholder="Residence (House No./Block/Lot)" required />
+                    <input type="text" class="pure-input-1-3" placeholder="Street (Zone/Purok/Sitio)" />
+                    <label for="stacked-barangay">Barangay</label>
+                        <select id="stacked-barangay">
+                        </select>
+                    <input type="text" class="pure-input-1-3" placeholder="City of Biñan , Laguna" style="margin-top: 10px;" readonly />
+
+
+                    <!-- Personal Information  -->
+                    <legend>3.  Personal Information</legend>
+                    <label for="month">Month:</label>
+                    <select id="month" name="month" required>
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+
+                    <label for="day">Day:</label>
+                    <select id="day" name="day" required>
+
+                    <!-- You can add options dynamically with JavaScript based on the selected month -->
+                    </select>
+                    <label for="year">Year:</label>
+                    <select id="year" name="year" required>
+                    <!-- You can generate the options dynamically with JavaScript based on a range of years -->
+                    </select>
+                    <input type="text" class="pure-input-1-4" placeholder="Birth Place" style="margin-left: 20px;" required />
+
+                    <label>Sex:</label>
+                    <select id="selectForm" placeholder="Sex" style="margin-left: 5px;" >
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                    </br></br>
+
+                    
+                    <label>Marital Status:</label>
+                    <select id="selectForm" placeholder="Sex" style="margin-left: 5px; margin-top: 10px;" >
+                        <option>Single</option>
+                        <option>Married</option>
+                        <option>Widow/Widower</option>
+                        <option>Seperated</option>
+                    </select>
+
+                    <label style="margin-left: 10px;">Housing Condition: </label>
+                    <select id="selectForm" placeholder="Sex" style="margin-left: 5px; margin-top: 10px;" >
+                        <option>House Owner</option>
+                        <option>Rental</option>
+                        <option>Living Alone</option>
+                        <option>Living with Children</option>
+                        <option>Living with Relatives</option>
+                    </select>
+
+                    <label style="margin-left: 10px;">If rental, who pays the rent: </label>
+                    <select id="selectForm" placeholder="Sex" style="margin-left: 5px; margin-top: 10px;" >
+                        <option>Myself</option>
+                        <option>Children</option>
+                    </select>
+
+                    <label>Rental Amount:</label>
+                    <input type="number" class="pure-input-1-4" style="margin-top: 10px;" disabled>
+                    
+                    <!-- Family Members  -->
+                    <legend>4. Family Members </legend>
+                    <p style="font-size: large;">a. Living with Senior Citizen</p>
+                    <label>1.</label>
+                    <input type="text" placeholder="Name" style="text-transform: uppercase; margin-left: 5px;"  />
+                    <input type="text" placeholder="Relation" style="text-transform: uppercase;" />
+                    <input type="text" placeholder="Age" style="width: 60px;">
+                    <input type="text"  placeholder="Civit Status" style="text-transform: uppercase;" />
+                    <input type="text"  placeholder="Occupation" style="text-transform: uppercase;" />
+                    </br>   
+
+                    <label>2.</label>
+                    <input type="text" placeholder="Name" style="text-transform: uppercase;"  />
+                    <input type="text" placeholder="Relation" style="text-transform: uppercase;" />
+                    <input type="text" placeholder="Age" style="width: 60px;">
+                    <input type="text"  placeholder="Civit Status" style="text-transform: uppercase;" />
+                    <input type="text"  placeholder="Occupation" style="text-transform: uppercase;" />
+                    </br>
+
+                    <label>3.</label>
+                    <input type="text" placeholder="Name" style="text-transform: uppercase;"  />
+                    <input type="text" placeholder="Relation" style="text-transform: uppercase;" />
+                    <input type="text" placeholder="Age" style="width: 60px;">
+                    <input type="text"  placeholder="Civit Status" style="text-transform: uppercase;" />
+                    <input type="text"  placeholder="Occupation" style="text-transform: uppercase;" />
+                    </br>
+
+                    <label>4.</label>
+                    <input type="text" placeholder="Name" style="text-transform: uppercase;"  />
+                    <input type="text" placeholder="Relation" style="text-transform: uppercase;" />
+                    <input type="text" placeholder="Age" style="width: 60px;">
+                    <input type="text"  placeholder="Civit Status" style="text-transform: uppercase;" />
+                    <input type="text"  placeholder="Occupation" style="text-transform: uppercase;" />
+                    </br>
+                    </br>
+                    <p style="font-size: large;">b. Not Living with Senior Citizen</p>
+                    <label>1.</label>
+                    <input type="text" placeholder="Name" style="text-transform: uppercase; margin-left: 5px;"  />
+                    <input type="text" placeholder="Relation" style="text-transform: uppercase;" />
+                    <input type="text" placeholder="Age" style="width: 60px;">
+                    <input type="text"  placeholder="Civit Status" style="text-transform: uppercase;" />
+                    <input type="text"  placeholder="Occupation" style="text-transform: uppercase;" />
+                    </br>   
+
+                    <label>2.</label>
+                    <input type="text" placeholder="Name" style="text-transform: uppercase;"  />
+                    <input type="text" placeholder="Relation" style="text-transform: uppercase;" />
+                    <input type="text" placeholder="Age" style="width: 60px;">
+                    <input type="text"  placeholder="Civit Status" style="text-transform: uppercase;" />
+                    <input type="text"  placeholder="Occupation" style="text-transform: uppercase;" />
+                    </br>
+
+                    <label>3.</label>
+                    <input type="text" placeholder="Name" style="text-transform: uppercase;"  />
+                    <input type="text" placeholder="Relation" style="text-transform: uppercase;" />
+                    <input type="text" placeholder="Age" style="width: 60px;">
+                    <input type="text"  placeholder="Civit Status" style="text-transform: uppercase;" />
+                    <input type="text"  placeholder="Occupation" style="text-transform: uppercase;" />
+                    </br> 
+
+                    <label>4.</label>
+                    <input type="text" placeholder="Name" style="text-transform: uppercase;"  />
+                    <input type="text" placeholder="Relation" style="text-transform: uppercase;" />
+                    <input type="text" placeholder="Age" style="width: 60px;">
+                    <input type="text"  placeholder="Civit Status" style="text-transform: uppercase;" />
+                    <input type="text"  placeholder="Occupation" style="text-transform: uppercase;" />
+                    </br> 
+
+                    <!-- Educational Attainment  -->
+                    <legend>5. Educational Attainment </legend>
+                    <label>1.</label>
+                    <input type="text" class="pure-input-1-3" placeholder="Elementary School" style="margin-left: 5px;"/>
+                    <input type="text" placeholder="School Year"/>
+                    </br>
+                    <label>2.</label>
+                    <input type="text" class="pure-input-1-3" placeholder="Secondary" style="margin-top: 10px;" />
+                    <input type="text" placeholder="School Year"/>
+                    </br>
+                    <label>3.</label>
+                    <input type="text" class="pure-input-1-3" placeholder="College" style="margin-top: 10px;" />
+                    <input type="text" placeholder="School Year"/>
+                    </br>
+                    <label>4.</label>
+                    <input type="text" class="pure-input-1-3" placeholder="Graduate Studies" style="margin-top: 10px;" />
+                    <input type="text" placeholder="School Year"/>
+                    </br>
+
+                    <!-- Employment Background  -->
+                    <legend>6. Employment Background </legend>
+                    <input type="text" placeholder="Last Employed" style="text-transform: uppercase;"  />
+                    <input type="text" placeholder="Last Position" style="text-transform: uppercase;"  />
+                    <input type="text" placeholder="Name of Company" style="text-transform: uppercase;"  />
+                    </br></br>
+                    <label>Years of Service</label>
+                    <input type="text" style="width: 90px;">
+                    <label>Years of Employment</label>
+                    <input type="text" style="width: 90px;">
+
+                    <label>Reason for Living</label>
+                    <select id="selectForm" placeholder="Sex" style="margin-left: 5px; margin-top: 10px;" >
+                        <option>End of Contract</option>
+                        <option>Resigned</option>
+                        <option>Terminated</option>
+                    </select>
+            <h3> B. Present Source of Income</h3>       
+                </fieldset>
+            </form>
+
+        
+                
+                
+        </div>
+        
+    </div>
+
+    <script>
+        // Get references to the checkbox and select form
+        const checkbox = document.getElementById('checkbox');
+        const selectForm = document.getElementById('selectForm');
+    
+        // Add event listener to the checkbox
+        checkbox.addEventListener('change', function() {
+          // Enable or disable the select form based on the checkbox's checked state
+          if (checkbox.checked) {
+            selectForm.disabled = false;
+          } else {
+            selectForm.disabled = true;
+          }
+        });
+
+        // FOR BARANGAY
+        fetch('barangay.json')
+            .then(response => response.json())
+            .then(data => {
+                var selectElement = document.getElementById("stacked-barangay");
+                data.forEach(function (item) {
+                    var option = document.createElement("option");
+                    option.value = item.value;
+                    option.textContent = item.label;
+                    selectElement.appendChild(option);
+                });
+        })
+        .catch(error => {
+            console.error('Error fetching JSON file:', error);
+        });
+
+        // Select Hide Element
+
+        document.getElementById("month").selectedIndex = -1;
+
+
+        // FOR DATE PICKER
+        const monthSelect = document.getElementById("month");
+        const daySelect = document.getElementById("day");
+        const yearSelect = document.getElementById("year");
+
+        // Function to dynamically generate the options for the days based on the selected month
+        function generateDays() {
+        const month = parseInt(monthSelect.value, 10);
+        const daysInMonth = new Date(yearSelect.value, month, 0).getDate();
+        
+        daySelect.innerHTML = ""; // Clear previous options
+
+        for (let i = 1; i <= daysInMonth; i++) {
+            const option = document.createElement("option");
+            option.value = i < 10 ? "0" + i : i;
+            option.textContent = i;
+            daySelect.appendChild(option);
+        }
+        }
+
+        // Function to dynamically generate the options for the years
+        function generateYears() {
+        const currentYear = new Date().getFullYear();
+
+        yearSelect.innerHTML = ""; // Clear previous options
+
+        for (let i = currentYear; i >= currentYear - 110; i--) {
+            const option = document.createElement("option");
+            option.value = i;
+            option.textContent = i;
+            yearSelect.appendChild(option);
+        }
+        }
+
+        // Event listeners
+        monthSelect.addEventListener("change", generateDays);
+        yearSelect.addEventListener("change", generateDays);
+        
+        // Generate initial options
+        generateDays();
+        generateYears();
+
+      </script>
+
+</body>
+</html>
