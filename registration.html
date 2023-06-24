@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="registration-style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.3.5/signature_pad.min.js" integrity="sha512-kw/nRM/BMR2XGArXnOoxKOO5VBHLdITAW00aG8qK4zBzcLVZ4nzg7/oYCaoiwc8U9zrnsO9UHqpyljJ8+iqYiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
     <title>Senior Citizen Portal</title>
@@ -56,7 +57,7 @@
 
                     <!-- Personal Information  -->
                     <legend>3.  Personal Information</legend>
-                    <label for="month">Birth Date:</label>
+                    <label for="month">Birth Month:</label>
                     <select name="monthDOB" id="month" name="month" required>
                         <option value="01">January</option>
                         <option value="02">February</option>
@@ -256,10 +257,25 @@
                 <label style="margin-left: 6px; margin-top: 20px;">Financial Support Received from OTHERS</label>
                 <input name="estimatedIncome" type="number" style="width: 120px;">
                 
-
-                
- 
-              
+            <h3> D. Indigent Social Pension Program</h3>
+                <label style="font-size: larger;">1. Are you a recipientbeneficiary of indigent Social Pension Program?</label>
+                    <div style="margin-left: 20px;" class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="social-pension-group" id="yesRadio" value="yes">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="social-pension-group" id="noRadio" value="no">
+                        <label class="form-check-label" for="inlineRadio2">No</label>
+                    </div>
+                <label style="font-size: larger;">- If YES, which Indigent Social Program?</label>
+                    <div style="margin-left: 20px;" class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="social-pension-group-2" id="localRadio" value="LGU">
+                        <label class="form-check-label" for="inlineRadio1">LGU Local</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="social-pension-group-2" id="nationalRadio" value="National">
+                        <label class="form-check-label" for="inlineRadio2">National</label>
+                    </div>
             </fieldset>
             </form>
 
@@ -347,6 +363,29 @@
         // Generate initial options
         generateDays();
         generateYears();
+
+        // Indigent Social Program
+        //     const selectForm = document.getElementById('selectForm');
+        const socialPensionGrp = document.getElementsByName('social-pension-group');
+        const socialPensionGrp2 = document.getElementsByName('social-pension-group-2');
+    
+        // Add event listener to the checkbox
+        socialPensionGrp.forEach(radio => {
+        radio.addEventListener('change', () => {
+        if (radio.value === 'no') {
+          // Disable the second radio group
+          socialPensionGrp2.forEach(radio => {
+            radio.disabled = true;
+            radio.checked = false;
+          });
+        } else {
+          // Enable the second radio group
+          socialPensionGrp2.forEach(radio => {  
+            radio.disabled = false;
+          });
+        }
+      });
+    });
 
       </script>
 
