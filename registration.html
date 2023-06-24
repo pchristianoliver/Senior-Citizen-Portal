@@ -276,6 +276,78 @@
                         <input class="form-check-input" type="radio" name="social-pension-group-2" id="nationalRadio" value="National">
                         <label class="form-check-label" for="inlineRadio2">National</label>
                     </div>
+
+            <h3> E. Health and Wellness Condition</h3>
+            <div style="margin-left: 5px;">  
+                <label style="font-size: larger;">1. Type of Illness:</label>
+                    <form class="pure-form">
+                        <label for="checkbox-radio-option-one" class="pure-checkbox">
+                            <input type="checkbox" name="sickness" id="checkbox-radio-option-one" value="Asthma" /> Asthma
+                        </label>
+                        <label for="checkbox-radio-option-one" class="pure-checkbox">
+                            <input type="checkbox" name="sickness" id="checkbox-radio-option-one" value="Diabetes" /> Diabetes
+                        </label>
+                        <label for="checkbox-radio-option-one" class="pure-checkbox">
+                            <input type="checkbox" name="sickness" id="checkbox-radio-option-one" value="Asthma" /> Asthma
+                        </label>
+                        <label for="checkbox-radio-option-one" class="pure-checkbox">
+                            <input type="checkbox" name="sickness" id="checkbox-radio-option-one" value="Hypertension" /> Hypertension
+                        </label> 
+                        <label for="checkbox-radio-option-one" class="pure-checkbox">
+                            <input type="checkbox" name="sickness"  id="checkbox-radio-option-one" value="Arthritis/Gout/Rheumatism" /> Arthritis/Gout/Rheumatism
+                        </label>
+                        <label for="checkbox-radio-option-one" class="pure-checkbox">
+                            <input type="checkbox" name="sickness" value="other" onclick="toggleOtherInput()"> Other<br>
+                            <input type="text" placeholder="specify.." id="otherInput" name="otherSickness" style="display: none;">
+                        </label> 
+                    </form>
+
+                <label style="font-size: larger;">2. Are you a Philhealth Member?</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="philhealthRadioOptions" id="yesRadio-philhealth" value="Yes">
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="philhealthRadioOptions" id="noRadio-philhealth" value="No">
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                </div><br>
+
+                <label style="font-size: larger;">3. Have you been confined/admitted and undergone surgical operation/procedure?</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="confinedRadioOptions" id="yesRadio-confined" value="Yes">
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="confinedRadioOptions" id="noRadio-confined" value="No">
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                </div><br>
+
+                <label style="font-size: larger;">4. Have you availed of any assistance yet?</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="assistanceRadioOptions" id="yesRadio-assitance" value="Yes">
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="assitanceRadioOptions" id="noRadio-assistance" value="No">
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                </div><br>
+
+                <label style="font-size: larger;">5. Last DATE received medical Cash Assistance from:</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="medicalCashRadioOptions" id="CSWDORadio-assitance" value="CSWDO">
+                    <label class="form-check-label" for="inlineRadio1">CSWDO</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="medicalCashRadioOptions" id="PCSORadio-assistance" value="PCSO">
+                    <label class="form-check-label" for="inlineRadio2">PCSO</label>
+                </div>
+                
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="medicalCashRadioOptions" id="otherRadio-assitance" value="Other" onclick="toggleOtherInput1()">
+                    <label class="form-check-label" for="inlineRadio1" >Other</label>
+                    <input type="text" placeholder="specify.." id="otherInput1" name="otherCashAssistance" style="display: none; margin-left: 5px;">
+                </div><br>
+            </div>
             </fieldset>
             </form>
 
@@ -386,6 +458,25 @@
         }
       });
     });
+        // Sickness others View
+
+        function toggleOtherInput() {
+        var otherInput = document.getElementById("otherInput");
+        if (otherInput.style.display === "none") {
+            otherInput.style.display = "block";
+        } else {
+            otherInput.style.display = "none";
+        }
+        }
+        // Medical Cash Assistance
+        function toggleOtherInput1() {
+        var otherInput1 = document.getElementById("otherInput1");
+        if (otherInput1.style.display === "none") {
+            otherInput1.style.display = "block";
+        } else {
+            otherInput1.style.display = "none";
+        }
+        }
 
       </script>
 
