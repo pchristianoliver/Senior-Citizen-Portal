@@ -26,7 +26,7 @@
             <form class="pure-form pure-g">
                 <fieldset>
                     <!-- Full Name -->
-                    <legend>1. Complete Name</legend>
+                    <legend>1. Complete Name and Contact Details</legend>
                     <input type="text" name="lastName" placeholder="Last Name" style="text-transform: uppercase;" required />
                     <input type="text" name="firstName" placeholder="First Name" style="text-transform: uppercase;" required/>
                     <input type="text" name="middleName" placeholder="Middle Name" style="text-transform: uppercase;" required/>
@@ -43,6 +43,8 @@
                             <option>V</option>
                             <option>VI</option> 
                         </select>
+                    <input type="text" name="phoneNumber" placeholder="Phone Number" style="margin-top: 10px;" required/>
+                    <input type="text" name="eMail" placeholder="E-Mail" style="margin-top: 10px;" required/>
 
                     <!-- Address -->
                     <legend>2. Address</legend>
@@ -269,11 +271,11 @@
                     </div>
                 <label style="font-size: larger;">- If YES, which Indigent Social Program?</label>
                     <div style="margin-left: 20px;" class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="social-pension-group-2" id="localRadio" value="LGU">
+                        <input class="form-check-input" type="radio" name="social-pension-group-2" id="localRadio" value="LGU" disabled>
                         <label class="form-check-label" for="inlineRadio1">LGU Local</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="social-pension-group-2" id="nationalRadio" value="National">
+                        <input class="form-check-input" type="radio" name="social-pension-group-2" id="nationalRadio" value="National" disabled>
                         <label class="form-check-label" for="inlineRadio2">National</label>
                     </div>
 
@@ -347,7 +349,12 @@
                     <label class="form-check-label" for="inlineRadio1" >Other</label>
                     <input type="text" placeholder="specify.." id="otherInput1" name="otherCashAssistance" style="display: none; margin-left: 5px;">
                 </div><br>
+                <label style="font-size: larger;">6. List of Maintenance Medicine</label><br>
+                <textarea class="text-area-medicine" name="medicine-list" rows="5" cols="45" placeholder="Type here (medicine1,medicine2,medicine3,etc.)"></textarea>
             </div>
+            <h3> F. Ideas and Suggestions</h3>
+                <label style="font-size: larger;">Give your ideas and suggestions for a much better implementation of Senior Citizen related programs.</label><br>
+                <textarea class="text-area-ideas" name="ideas-and-suggestions" rows="8" cols="120" placeholder="Type here"></textarea>
             </fieldset>
             </form>
 
