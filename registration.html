@@ -364,7 +364,16 @@
             <button onclick="saveSignature()">Save</button>
             <br>
             <img id="signatureImage" src="" alt="Signature Preview"> 
-          
+            
+            <h1>File Upload</h1>
+            <form>
+                <input type="file" id="file1" name="file1">
+                <br>
+                <input type="file" id="file2" name="file2">
+                <br>
+                <button type="button" onclick="uploadFiles()">Upload</button>
+            </form>
+
             </fieldset>
             </form>
 
@@ -532,6 +541,21 @@
         function saveSignature() {
             const image = canvas.toDataURL();
             document.getElementById('signatureImage').src = image;
+        }
+        // Upload File
+        
+        function uploadFiles() {
+            const file1 = document.getElementById('file1').files[0];
+            const file2 = document.getElementById('file2').files[0];
+
+            if (file1 && file2) {
+                // Both files are selected, you can perform further processing or send them to a server
+                console.log('File 1:', file1);
+                console.log('File 2:', file2);
+            } else {
+                // At least one file is missing
+                alert('Please select both files.');
+            }
         }
       </script>
 
