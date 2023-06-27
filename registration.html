@@ -355,6 +355,16 @@
             <h3> F. Ideas and Suggestions</h3>
                 <label style="font-size: larger;">Give your ideas and suggestions for a much better implementation of Senior Citizen related programs.</label><br>
                 <textarea class="text-area-ideas" name="ideas-and-suggestions" rows="8" cols="120" placeholder="Type here"></textarea>
+                
+            <h3> E. Upload ID and Signature</h3>
+
+            <canvas id="signatureCanvas" width="400" height="200"></canvas>
+            <br>
+            <button onclick="clearSignature()">Clear</button>
+            <button onclick="saveSignature()">Save</button>
+            <br>
+            <img id="signatureImage" src="" alt="Signature Preview"> 
+          
             </fieldset>
             </form>
 
@@ -485,6 +495,44 @@
         }
         }
 
+        // Signature
+
+        const canvas = document.getElementById('signatureCanvas');
+        const context = canvas.getContext('2d');
+        let isDrawing = false;
+
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+
+        function startDrawing(event) {
+            isDrawing = true;
+            const { offsetX, offsetY } = event;
+            context.beginPath();
+            context.moveTo(offsetX, offsetY);
+        }
+
+        function draw(event) {
+            if (!isDrawing) return;
+            const { offsetX, offsetY } = event;
+            context.lineTo(offsetX, offsetY);
+            context.stroke();
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+        }
+
+        function clearSignature() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            document.getElementById('signatureImage').src = '';
+        }
+
+        function saveSignature() {
+            const image = canvas.toDataURL();
+            document.getElementById('signatureImage').src = image;
+        }
       </script>
 
 </body>
